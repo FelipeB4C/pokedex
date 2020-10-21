@@ -3,6 +3,7 @@ import Sequelize, { Model } from 'sequelize'
 class Pokemon extends Model {
   static init (sequelize) {
     super.init({
+      number: Sequelize.INTEGER,
       name: Sequelize.STRING,
       pokeimg: Sequelize.STRING,
       path: Sequelize.STRING,
