@@ -13,6 +13,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      pokeimg: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      path: {
+        type: Sequelize.STRING,
+        allowNull: true,
+        unique: true
+      },
       type: {
         type: Sequelize.STRING,
         allowNull: false
