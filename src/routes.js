@@ -10,5 +10,6 @@ routes.post('/pokemons', upload.single('file'), PokemonController.store)
 routes.get('/pokemons', PokemonController.index)
 routes.get('/pokemons/:id', PokemonController.findOne)
 routes.delete('/pokemons/:id', PokemonController.delete)
+routes.put('/pokemons/:id', upload.single('file'), PokemonController.update)
 
 export default routes

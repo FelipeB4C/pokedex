@@ -34,6 +34,21 @@ class PokemonController {
 
     return res.json({ mensagem: 'Pokémon apagado' })
   }
+
+  async update (req, res) {
+    const pokemon = await Pokemon.findByPk(req.params.id)
+
+    const file = req.file
+
+    if (file) {
+      const { originalname: pokeimg, filename: path } = req.file
+      const request = await pokemon.update({ pokeimg, path })
+      return res.json(request)
+    }
+    if (!file) {
+      return res.json({ message: 'Deu certo' })
+    }
+  }
 }
 
 export default new PokemonController()
